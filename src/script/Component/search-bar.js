@@ -20,6 +20,19 @@ class SearchBar extends HTMLElement {
     render(){
         this.shadowDOM.innerHTML = `
         <style>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :host {
+            border-style: none; 
+            padding: 50px 16px 16px 16px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            background-color: whitesmoke;
+        }
         .pencarian {
             max-width: 800px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -34,7 +47,9 @@ class SearchBar extends HTMLElement {
         
         .pencarian > input {
             flex: 1;
-            padding: 16px;
+            padding: 16px 0 16px 16px;
+            width: 100%;
+            min-width: 130px;
             border-radius: 40px;
             font-weight: bold;
             border:none;
@@ -54,8 +69,9 @@ class SearchBar extends HTMLElement {
         }
         
         .pencarian > button {
-            width: 23%;
             cursor: pointer;
+            font-size: 14px;
+            padding: 0 16px;
             margin-left: auto;
             background-color: lightslategray;;
             color: white;
@@ -64,6 +80,7 @@ class SearchBar extends HTMLElement {
             border-radius: 30px;
             position: relative;
             z-index: 1;
+            min-width: 80px;
         }
 
         img {
@@ -72,12 +89,18 @@ class SearchBar extends HTMLElement {
             object-position: -90px;
         }
 
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: 766px) {
             img {
-                display:none;
+                display: none;
             }
+            .pencarian > input {
+                width: 100%;
+            }
+            :host {
+                flex: none;
+                padding: 16px 16px 16px 16px;
+            }   
         }
-    
 
         </style>
         <div id="pencarian" class="pencarian">

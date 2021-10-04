@@ -19,7 +19,7 @@ class ShowItem extends HTMLElement {
                 box-sizing: border-box;
             }
             :host {
-                display: flex;
+                display: block;
                 margin-bottom: 18px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                 overflow: hidden;
@@ -28,49 +28,69 @@ class ShowItem extends HTMLElement {
             }
             
             .poster {
-                flex-basis: 30%;
-                width: 100%;
-                max-height: 300px;
+                height: 320px;
                 object-fit: contain;
                 object-position: left;
             }
             
             .show-info {
-                flex-basis: 90%;
-                padding: 24px;
+                display: flex;
+                width: 100%;
             }
             
             .show-info > h2 {
-                font-weight: lighter;
+                padding: 0 0 0 16px;
+                font-size: 35px;
+                line-height: 125%;
             }
             
-            .show-info > p {
+            .overview {
                 margin-top: 10px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 10; /* number of lines to show */
+                -webkit-line-clamp: 5; /* number of lines to show */
             }
 
-            .show-info > p:hover {
-                -webkit-line-clamp: 50;  
+            .overview:hover {
+                -webkit-line-clamp: unset;  
             }
 
             @media screen and (max-width: 550px) {
-                .show-info {
-                    flex-basis: 70%;
-                    padding: 24px;
+                .poster {
+                    height: 220px;
+                }
+                .overview { 
+                    font-size: 20px;
+                }
+                .show-info > h2 {
+                    padding: 0 0 0 8px;
+                    font-size: 25px;
                 }
             }
 
-            </style>
+            @media screen and (max-width: 400px) {
+                .poster {
+                    height: 170px;
+                }
+                .overview {
+                    font-size: 14px;
+                }
+                .show-info > h2 {
+                    font-size: 18px;
+                }
+            }
 
-            <img class="poster" src="https://image.tmdb.org/t/p/w500${this._show.poster_path}" alt="Fan Art">
+
+            </style>
+            
+
             <div class="show-info">
+                <img class="poster" src="https://image.tmdb.org/t/p/w500${this._show.poster_path}" alt="Fan Art">
                 <h2>${this._show.name}</h2>
-                <p>${this._show.overview}</p>
-            </div>`;
+            </div>
+            <p class="overview">${this._show.overview}</p>`;
     }
  }
   

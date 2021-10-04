@@ -28,38 +28,29 @@ main {
     
 }
 
-search-bar {
-    flex-basis: 30%;
-    border-style: none; 
-    padding: 50px 16px 16px 16px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    position: relative;
-    background-color: whitesmoke;
-}
-
 show-list {
     background-image: url(../Assets/show-list.jpg);
-    flex-basis: 70%;
     width: 100%;
+    min-width: 500px;
     padding: 16px;
     overflow: auto;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 766px) {
     main {
         flex-direction: column;
     }
-    search-bar {
-        height: 20%;
-        flex: none;
-        padding: 25px 16px 16px 16px;
-    }    show-list {
+    show-list {
         height: 80%;
-        flex: none;
     }
 } 
 
+@media screen and (max-width: 475px) {
+    show-list {
+        min-width: 320px;
+    }
+} 
 
 

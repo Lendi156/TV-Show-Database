@@ -29,13 +29,24 @@ class AppBar extends HTMLElement {
         div { 
             display: flex;
             justify-content: flex-start;
+            align-items: center;
         }
         h2 {
-            padding: 20px 20px 20px 5px;
+            padding: 20px 20px 20px 16px;
         }
         img {
             height: 40px;
-            margin: 13px 0px 10px 10px;
+            margin-left: 16px;
+        }
+        @media screen and (max-width: 550px) {
+            img {
+                height: 30px;
+                margin-left: 16px;
+            } 
+            h2 {
+                padding: 16px 16px 16px 8px;
+                font-size: 1em;
+            }
         }
         </style>
         <div>
