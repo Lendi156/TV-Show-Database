@@ -28,6 +28,14 @@ main {
     
 }
 
+search-bar {
+    border-style: none; 
+    padding: 50px 16px 16px 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    background-color: whitesmoke;
+}
+
 show-list {
     background-image: url(../Assets/show-list.jpg);
     width: 100%;
@@ -42,6 +50,10 @@ show-list {
     main {
         flex-direction: column;
     }
+    search-bar {
+        flex: none;
+        padding: 16px 16px 16px 16px;
+    }  
     show-list {
         height: 80%;
     }

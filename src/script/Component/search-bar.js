@@ -26,13 +26,6 @@ class SearchBar extends HTMLElement {
             padding: 0;
             box-sizing: border-box;
         }
-        :host {
-            border-style: none; 
-            padding: 50px 16px 16px 16px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            position: relative;
-            background-color: whitesmoke;
-        }
         .pencarian {
             max-width: 800px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -96,10 +89,6 @@ class SearchBar extends HTMLElement {
             .pencarian > input {
                 width: 100%;
             }
-            :host {
-                flex: none;
-                padding: 16px 16px 16px 16px;
-            }   
         }
 
         </style>
